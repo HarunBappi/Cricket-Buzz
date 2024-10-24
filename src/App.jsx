@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Banner from "./components/Banner"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Players from "./components/Players"
 function App() {
@@ -28,6 +29,7 @@ console.log(active)
       <Banner></Banner>
       <Players active={active} handleActiveBtn={handleActiveBtn}></Players>
     </div>
+    <Footer></Footer>
     </>
   )
 }
