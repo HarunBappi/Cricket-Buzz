@@ -1,16 +1,32 @@
 import { useEffect, useState } from "react"
+import Player from "./Player"
 
-export default function Players() {
+export default function Players({handleActiveBtn, active}) {
     const [players, setPlayers] = useState([])
 
     useEffect(()=>{
         fetch("blogs.json")
         .then(res=> res.json())
-        .then(data=> console.log(data))
+        .then(data=> setPlayers(data))
     })
   return (
     <div className="mt-12">
-      <h1 className="text-2xl font-semibold">Available Players</h1>
+      <div className="flex justify-between items-center">
+        <div>
+           <h1 className="text-2xl font-semibold">Available Players
+           </h1>
+        </div>
+        <div className="flex gap-4 border rounded-lg p-2">
+            <button className={`${active.available?"btn bg-yellow-500":"btn"}`} onClick={()=>handleActiveBtn("available")}>Available</button>
+            <button className={`${active.selected?"btn bg-yellow-500":"btn"}`} onClick={()=>handleActiveBtn("selected")}>Selected(0)</button>
+        </div>
+      </div>
+      {/* Show data in player Component */}
+<div  className="grid grid-cols-3 gap-6">
+{
+players.map(player=> <Player key={player.id} player={player}></Player>)
+      }
+</div>
     </div>
   )
 }
