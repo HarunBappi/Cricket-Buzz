@@ -1,5 +1,5 @@
 import bannerMain from '../assets/banner-main.png'
-export default function Banner() {
+export default function Banner({handleAddCreadit}) {
   return (
     <div className="bg-cover bg-no-repeat mt-20"
      style={{
@@ -8,7 +8,7 @@ export default function Banner() {
          <img src={bannerMain} alt="" />
          <h1 className='text-3xl'>Assemble Your Ultimate Dream 11 Cricket Team</h1>
          <p>Beyond Boundaries Beyond Limits</p>
-         <button className='p-2 rounded-md bg-yellow-500 font-semibold'>Claim Free Credit</button>
+         <button onClick={()=>handleAddCreadit(600000)} className='p-2 rounded-md bg-yellow-500 font-semibold'>Claim Free Credit</button>
       </div>
     </div>
   )

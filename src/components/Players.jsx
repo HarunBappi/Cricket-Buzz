@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Player from "./Player"
 
-export default function Players({handleActiveBtn, active}) {
+export default function Players({handleActiveBtn, active,handeChoosePlayer}) {
     const [players, setPlayers] = useState([])
 
     useEffect(()=>{
@@ -24,7 +24,11 @@ export default function Players({handleActiveBtn, active}) {
       {/* Show data in player Component */}
 <div  className="grid grid-cols-3 gap-6">
 {
-players.map(player=> <Player key={player.id} player={player}></Player>)
+players.map(player=> <Player 
+    key={player.playerId}
+     player={player}
+     handeChoosePlayer={handeChoosePlayer}
+     ></Player>)
       }
 </div>
     </div>

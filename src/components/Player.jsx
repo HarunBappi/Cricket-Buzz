@@ -1,4 +1,4 @@
-export default function Player({player}) {
+export default function Player({player,handeChoosePlayer}) {
     const {name, image,country,role,battingType,bowlingType,biddingPrice} = player
   return (
     <div className="border rounded-md p-3 mt-4">
@@ -33,7 +33,7 @@ export default function Player({player}) {
                     <p>Price: ${biddingPrice}</p>
                 </div>
                 <div>
-                    <button className="border p-2 rounded-md">Choose Player</button>
+                    <button onClick={()=>handeChoosePlayer(player,biddingPrice)} className="border p-2 rounded-md">Choose Player</button>
                 </div>
             </div>
         </div>

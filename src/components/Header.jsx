@@ -1,6 +1,6 @@
 import { BsCoin } from "react-icons/bs";
 import logoImage from '../assets/logo.png';
-export default function Header() {
+export default function Header({credit}) {
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -14,7 +14,7 @@ export default function Header() {
             <li><a href="">Teams</a></li>
             <li><a href="">Schedules</a></li>
             </ul>
-            <p className='border rounded-md p-2 flex items-center gap-2 font-semibold'><span id="coin">0</span> Coin <BsCoin style={{color:'#F39E09', fontSize:'22px'}}></BsCoin></p>
+            <p className='border rounded-md p-2 flex items-center gap-2 font-semibold'>{credit} Coin <BsCoin style={{color:'#F39E09', fontSize:'22px'}}></BsCoin></p>
         </div>
       </div>
     </div>
