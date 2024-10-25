@@ -1,7 +1,8 @@
-export default function SelectedPlayers() {
+export default function SelectedPlayers({SetChoosePlayer}) {
+
   return (
     <div>
-        <h1>Selected Players</h1>
+         <h1>dfggf {SetChoosePlayer} </h1>
     </div>
   )
 }

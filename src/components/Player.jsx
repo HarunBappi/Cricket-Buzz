@@ -1,5 +1,28 @@
-export default function Player({player,handeChoosePlayer}) {
-    const {name, image,country,role,battingType,bowlingType,biddingPrice} = player
+export default function Player({player,selectedPlayer,credit,setCredit,toast,setSelectedPlayer}) {
+    const {name, image,country,role,battingType,bowlingType,biddingPrice,playerId} = player
+// Copy 
+const handleSelectPlayer = () => {
+    const choosePlayer = selectedPlayer.find(p=> p.playerId === playerId)
+    // Handle Player 
+    if(choosePlayer){
+        toast.error("alredy selected");
+        return
+    }
+    // Credit Validation and Credit minus
+    if (credit < biddingPrice) {
+        toast.warning("Credit is not enough");
+      return;
+    }
+    // Maximum Player Selected 
+    if (selectedPlayer.length < 6) {
+        setSelectedPlayer([...selectedPlayer, player]);
+        setCredit(credit - biddingPrice);
+        toast.success(`${name} added`);
+    } else {
+        toast.error("Maximum 6 Players added");
+    }
+  };
+
   return (
     <div className="border rounded-md p-3 mt-4">
         <img className="h-60 w-full rounded-lg" src={image} alt="" />
@@ -33,7 +56,7 @@ export default function Player({player,handeChoosePlayer}) {
                     <p>Price: ${biddingPrice}</p>
                 </div>
                 <div>
-                    <button onClick={()=>handeChoosePlayer(player,biddingPrice)} className="border p-2 rounded-md">Choose Player</button>
+                    <button onClick={handleSelectPlayer} className="border p-2 rounded-md text-slate-700 font-semibold">Choose Player</button>
                 </div>
             </div>
         </div>
