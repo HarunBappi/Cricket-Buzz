@@ -1,32 +1,49 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function SelectedPlayers({
   selectedPlayer,
   handleRemovePlayer,
-  handleAddMore
-}) {
+  handleAddMore,
+})
+{
+    // Toast Message 
+    const toastMsg = playerName =>{
+        toast.success(`${playerName} is remove!`)
+    }
+    const handleRemove = (playerId, playerName) => {
+        handleRemovePlayer(playerId); 
+        toastMsg(playerName); 
+      };
   return (
     <div>
       <div className="mt-12">
         <h1 className="text-2xl font-semibold">
           Selected Players ({selectedPlayer.length}/6)
         </h1>
-        <div className="grid grid-cols-3 gap-6 mt-4">
+        <div className="mt-4">
           {selectedPlayer.map((player) => (
-            <div key={player.playerId} className="border rounded-md p-3">
-              <img
-                className="h-60 w-full rounded-lg"
-                src={player.image}
-                alt={player.name}
-              />
-              <h1 className="text-xl font-semibold">{player.name}</h1>
-              <div className="bg-gray-200 px-4 py-2 rounded-xl font-semibold mb-4">
-                {player.role}
+            <div key={player.playerId} className="border rounded-md p-3 mb-3">
+              <div className="flex items-center justify-between">
+                <div className="flex gap-3 items-center">
+                  <img
+                    className="w-20 h-20 rounded-lg"
+                    src={player.image}
+                    alt={player.name}
+                  />
+                  <div className="flex flex-col gap-2">
+                  <h1 className="text-xl font-semibold">{player.name}</h1>
+                  <p className="text-sm text-gray-400">{player.role}</p>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    onClick={() => handleRemove(player.playerId, player.name)}
+                    className="border p-2 rounded-md text-red-600 font-semibold"
+                  >
+                    <i className="fa-solid fa-trash-can"></i>
+                  </button>
+                </div>
               </div>
-              <button
-                onClick={() => handleRemovePlayer(player.playerId)}
-                className="border p-2 rounded-md text-red-600 font-semibold"
-              >
-                Remove
-              </button>
             </div>
           ))}
         </div>
