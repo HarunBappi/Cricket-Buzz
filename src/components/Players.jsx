@@ -5,8 +5,6 @@ export default function Players({
   toast,
   setCredit,
   credit,
-  view,
-  toggleButton,
   handleSelectPlayer,
   selectedPlayer,
   setSelectedPlayer,
@@ -19,24 +17,6 @@ export default function Players({
   });
   return (
     <div className="mt-12">
-      <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-semibold">Available Players</h1>
-        <div className="flex gap-4 border rounded-lg p-2">
-          <button
-            className={`${view === "available" ? "btn bg-[#E7FE29]" : "btn"}`}
-            onClick={() => toggleButton("available")}
-          >
-            {" "}
-            Available
-          </button>
-          <button
-            className={`${view === "selected" ? "btn bg-[#E7FE29]" : "btn"}`}
-            onClick={() => toggleButton("selected")}
-          >
-            Selected ({selectedPlayer.length})
-          </button>
-        </div>
-      </div>
       {/* Show data in player Component */}
       <div className="grid grid-cols-3 gap-6">
         {players.map((player) => (

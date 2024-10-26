@@ -8,10 +8,10 @@ This cricket project is an interactive platform. Where users can select their fa
 
 # Technologies Used.
 
-- React JS
+- React
 - React-Toastify
+- JavaScript
 - Tailwind CSS
-- Font-Awesome
 
 # 3 key Features of your Project.
 

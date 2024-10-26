@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Players from "./components/Players";
 import SelectedPlayers from "./components/SelectedPlayers";
+import ToggoleButtons from "./components/ToggoleButtons";
 function App() {
   // Toggle Button state
   const [view, setView] = useState("available");
@@ -57,18 +58,19 @@ function App() {
       <div className="w-5/6 mx-auto mt-6">
         <Header credit={credit}></Header>
         <Banner handleAddCreadit={handleAddCreadit}></Banner>
+        <ToggoleButtons
+        view={view}
+        toggleButton={toggleButton}
+        selectedPlayer={selectedPlayer}
+        ></ToggoleButtons>
         {view === "available" ? (
           <Players
-            view={view}
             credit={credit}
             handleSelectPlayer={handleSelectPlayer}
-            toggleButton={toggleButton}
             selectedPlayer={selectedPlayer}
           />
         ) : (
           <SelectedPlayers
-            view={view}
-            toggleButton={toggleButton}
             selectedPlayer={selectedPlayer}
             handleRemovePlayer={handleRemovePlayer}
             handleAddMore={handleAddMore}
@@ -80,5 +82,4 @@ function App() {
     </>
   );
 }
-
 export default App;

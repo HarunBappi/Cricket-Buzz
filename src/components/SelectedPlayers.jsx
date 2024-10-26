@@ -6,15 +6,14 @@ export default function SelectedPlayers({
   handleAddMore,
 }) {
   // Toast Message for Removing
-  const toastMsg = (playerName) => {
-    toast.success(`${playerName} is remove!`);
+  const toastMsg = (name) => {
+    toast.success(`${name} is remove!`);
   };
-  const handleRemove = (playerId, playerName) => {
-    handleRemovePlayer(playerId);
-    toastMsg(playerName);
+  const handleRemove = (id, name) => {
+    handleRemovePlayer(id);
+    toastMsg(name);
   };
   return (
-    <div>
       <div className="mt-12">
         <h1 className="text-2xl font-semibold">
           Selected Players ({selectedPlayer.length}/6)
@@ -53,7 +52,6 @@ export default function SelectedPlayers({
         >
           Add More Players
         </button>
-      </div>
     </div>
   );
 }
