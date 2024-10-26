@@ -48,7 +48,7 @@ export default function SelectedPlayers({
         </div>
         <button
           onClick={handleAddMore}
-          className="mt-4 btn bg-blue-500 text-white"
+          className="mt-4 btn bg-[#E7FE29]"
         >
           Add More Players
         </button>
