@@ -1,19 +1,18 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function SelectedPlayers({
   selectedPlayer,
   handleRemovePlayer,
   handleAddMore,
-})
-{
-    // Toast Message 
-    const toastMsg = playerName =>{
-        toast.success(`${playerName} is remove!`)
-    }
-    const handleRemove = (playerId, playerName) => {
-        handleRemovePlayer(playerId); 
-        toastMsg(playerName); 
-      };
+}) {
+  // Toast Message for Removing
+  const toastMsg = (playerName) => {
+    toast.success(`${playerName} is remove!`);
+  };
+  const handleRemove = (playerId, playerName) => {
+    handleRemovePlayer(playerId);
+    toastMsg(playerName);
+  };
   return (
     <div>
       <div className="mt-12">
@@ -24,15 +23,16 @@ export default function SelectedPlayers({
           {selectedPlayer.map((player) => (
             <div key={player.playerId} className="border rounded-md p-3 mb-3">
               <div className="flex items-center justify-between">
-                <div className="flex gap-3 items-center">
+                <div className="flex gap-2 items-center">
                   <img
-                    className="w-20 h-20 rounded-lg"
+                    className="w-28 h-20 rounded-lg"
                     src={player.image}
                     alt={player.name}
                   />
-                  <div className="flex flex-col gap-2">
-                  <h1 className="text-xl font-semibold">{player.name}</h1>
-                  <p className="text-sm text-gray-400">{player.role}</p>
+                  <div className="flex flex-col gap-1">
+                    <h1 className="text-xl font-semibold">{player.name}</h1>
+                    <p className="text-sm text-gray-400">{player.role}</p>
+                    <p className="text-sm text-gray-400">Price: ${player.biddingPrice}</p>
                   </div>
                 </div>
                 <div>

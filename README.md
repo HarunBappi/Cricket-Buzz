@@ -1,8 +1,24 @@
-# React + Vite
+# Name of Your Project.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Cricket
 
-Currently, two official plugins are available:
+# Project Description.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This cricket project is an interactive platform. Where users can select their favorite cricket players. Users can select up to 6 players and each player's picture, name and role is displayed. When a player is deleted from the selected players list, a confirmation toast message is displayed, indicating the name of the deleted player. Besides, there is also an option to add more players.
+
+# Technologies Used.
+
+- React JS
+- React-Toastify
+- Tailwind CSS
+- Font-Awesome
+
+# 3 key Features of your Project.
+
+- Choose Player
+- Toast Message
+- Remove Selected Player
+
+# Project Live Link
+
+-
