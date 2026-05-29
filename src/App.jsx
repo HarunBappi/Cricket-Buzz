@@ -18,6 +18,7 @@ function App() {
   const handleAddCreadit = (money) => {
     const addCredit = credit + money;
     setCredit(addCredit);
+    toast.success("Credit Added Successfull!")
   };
   // Handle Choose Player
   const [selectedPlayer, setSelectedPlayer] = useState([]);
