@@ -21,4 +21,4 @@ This cricket project is an interactive platform. Where users can select their fa
 
 # Project Live Link
 
-- hoc-border.surge.sh
+- https://cricket-buzz-one.vercel.app
